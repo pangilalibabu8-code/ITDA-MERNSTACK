@@ -1,0 +1,1194 @@
+/* =========================================================
+   TRIBAL ROOTS
+   Tribal Village - Nature & Culture Website
+   HTML5 + CSS3 only
+========================================================= */
+
+
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+    --forest: #183c2c;
+    --forest-light: #2f6545;
+    --green: #527a50;
+
+    --brown: #754b32;
+    --terracotta: #b85d3b;
+
+    --cream: #f7f1e5;
+    --sand: #e8dcc5;
+    --white: #ffffff;
+
+    --dark: #17231d;
+    --text: #526056;
+    --muted: #7b877e;
+
+    --shadow: 0 15px 40px rgba(24, 60, 44, 0.12);
+    --radius: 18px;
+
+    --container: 1180px;
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--dark);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ================= COMMON ================= */
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-tag {
+    color: var(--terracotta);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+
+.section-heading.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-heading h2,
+.intro-content h2,
+.culture-text h2,
+.responsible-content h2,
+.contact-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.12;
+    color: var(--forest);
+}
+
+.section-heading h2 span,
+.intro-content h2 span,
+.culture-text h2 span,
+.responsible-content h2 span,
+.contact-content h2 span {
+    color: var(--terracotta);
+}
+
+.section-heading > p:last-child {
+    margin-top: 18px;
+    color: var(--text);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(247, 241, 229, 0.94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(24, 60, 44, 0.08);
+}
+
+.navbar {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    color: var(--forest);
+}
+
+.logo > span:last-child > span {
+    color: var(--terracotta);
+}
+
+.logo-icon {
+    font-size: 1.7rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--forest);
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--terracotta);
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--terracotta);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        url("https://api.breakbag.com/storage/images/discover-nagaland-beyond-touri-ph8nw34xnd3oy364-1778750092965.jpeg")
+        center / cover no-repeat;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 38, 27, 0.88),
+            rgba(10, 38, 27, 0.42),
+            rgba(10, 38, 27, 0.15)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+}
+
+.eyebrow {
+    color: #e8c6a6;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    max-width: 780px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.98;
+}
+
+.hero h1 span {
+    display: block;
+    color: #e7b18f;
+}
+
+.hero-text {
+    max-width: 570px;
+    font-size: 1.1rem;
+    margin: 28px 0;
+    color: #f1eee7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 27px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--terracotta);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    background: #963f27;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.7);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--forest);
+}
+
+.btn-dark {
+    background: var(--forest);
+    color: white;
+    margin-top: 20px;
+}
+
+.btn-dark:hover {
+    transform: translateY(-3px);
+    background: var(--brown);
+}
+
+.btn-outline-dark {
+    border: 1px solid var(--forest);
+    color: var(--forest);
+}
+
+.btn-outline-dark:hover {
+    background: var(--forest);
+    color: white;
+}
+
+.scroll-down {
+    position: absolute;
+    z-index: 2;
+    right: 5%;
+    bottom: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.scroll-down span {
+    font-size: 1.5rem;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro {
+    background: var(--cream);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.intro-image {
+    position: relative;
+}
+
+.intro-image img {
+    height: 600px;
+    border-radius: 25px;
+}
+
+.image-badge {
+    position: absolute;
+    bottom: 25px;
+    right: -25px;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-badge strong {
+    color: var(--terracotta);
+    font-size: 1.8rem;
+}
+
+.image-badge span {
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.intro-content > p:not(.section-tag) {
+    color: var(--text);
+    margin-top: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #d9d0bd;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats strong {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    color: var(--forest);
+}
+
+.stats span {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+
+/* ================= EXPLORE ================= */
+
+.explore-section {
+    background: #fffdf8;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.explore-card {
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: 0 10px 30px rgba(50, 40, 20, 0.08);
+    transition: 0.4s;
+}
+
+.explore-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.card-image {
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    height: 100%;
+    transition: 0.5s;
+}
+
+.explore-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.card-number {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    color: var(--forest);
+    font-weight: 700;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: var(--forest);
+}
+
+.card-content p {
+    color: var(--text);
+    margin: 10px 0 18px;
+    font-size: 0.9rem;
+}
+
+.card-content a {
+    color: var(--terracotta);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+
+/* ================= NATURE ================= */
+
+.nature-section {
+    background: var(--forest);
+}
+
+.nature-section .section-heading h2 {
+    color: white;
+}
+
+.nature-section .section-heading > p:last-child {
+    color: #cbd8cd;
+}
+
+.nature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.nature-card {
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.nature-card.large {
+    grid-column: span 2;
+    height: 450px;
+}
+
+.nature-card img {
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+}
+
+.nature-card:hover img {
+    transform: scale(1.1);
+}
+
+.nature-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 30%,
+        rgba(0, 0, 0, 0.78)
+    );
+}
+
+.nature-caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: 25px;
+    right: 20px;
+    color: white;
+}
+
+.nature-caption span {
+    color: #e9b18d;
+    font-weight: 700;
+}
+
+.nature-caption h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+}
+
+.nature-caption p {
+    font-size: 0.85rem;
+    color: #e3e7e3;
+}
+
+
+/* ================= CULTURE ================= */
+
+.culture-section {
+    background: var(--sand);
+}
+
+.culture-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.culture-text > p:not(.section-tag) {
+    color: var(--text);
+    margin-top: 20px;
+}
+
+.culture-list {
+    background: rgba(255,255,255,0.55);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.culture-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 20px;
+    padding: 28px;
+    border-bottom: 1px solid rgba(24,60,44,0.1);
+    transition: 0.3s;
+}
+
+.culture-item:last-child {
+    border-bottom: 0;
+}
+
+.culture-item:hover {
+    background: white;
+    padding-left: 35px;
+}
+
+.culture-item > span {
+    color: var(--terracotta);
+    font-weight: 800;
+}
+
+.culture-item h3 {
+    color: var(--forest);
+    font-family: "Playfair Display", serif;
+    font-size: 1.3rem;
+}
+
+.culture-item p {
+    color: var(--text);
+    font-size: 0.88rem;
+    margin-top: 5px;
+}
+
+
+/* ================= LIFESTYLE ================= */
+
+.lifestyle-section {
+    background: #fffdf8;
+}
+
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.life-card {
+    padding: 35px 28px;
+    border-radius: var(--radius);
+    background: var(--cream);
+    border: 1px solid #e6decd;
+    transition: 0.35s;
+}
+
+.life-card:hover {
+    transform: translateY(-8px);
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.life-icon {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 18px;
+}
+
+.life-card h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--forest);
+    font-size: 1.35rem;
+}
+
+.life-card p {
+    color: var(--text);
+    font-size: 0.88rem;
+    margin-top: 8px;
+}
+
+
+/* ================= RESPONSIBLE TOURISM ================= */
+
+.responsible {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        url("https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=2000&q=90")
+        center / cover no-repeat;
+    color: white;
+}
+
+.responsible-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 43, 29, 0.8);
+}
+
+.responsible-content {
+    position: relative;
+    z-index: 2;
+}
+
+.responsible-content h2 {
+    color: white;
+    max-width: 650px;
+}
+
+.responsible-content > p:not(.section-tag) {
+    max-width: 700px;
+    color: #e2e9e3;
+    margin-top: 20px;
+}
+
+.responsible-points {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.responsible-points div {
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+}
+
+.responsible-points strong {
+    display: block;
+    color: #e6ad87;
+    margin-bottom: 8px;
+}
+
+.responsible-points span {
+    font-size: 0.85rem;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-section {
+    background: var(--cream);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 230px;
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 0;
+}
+
+.gallery-item img {
+    height: 100%;
+    transition: 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 45%,
+        rgba(0,0,0,0.7)
+    );
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+    z-index: 2;
+    color: white;
+    font-weight: 700;
+}
+
+.gallery-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-tall {
+    grid-row: span 2;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    background: var(--sand);
+    padding: 100px 0;
+}
+
+.contact-box {
+    background: var(--forest);
+    color: white;
+    border-radius: 25px;
+    padding: 70px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 40px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contact-content h2 {
+    color: white;
+}
+
+.contact-content > p:not(.section-tag) {
+    max-width: 600px;
+    color: #d6dfd8;
+    margin-top: 20px;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-decoration {
+    text-align: center;
+}
+
+.circle {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--terracotta);
+    font-size: 4rem;
+    border: 12px solid rgba(255,255,255,0.1);
+}
+
+.contact-decoration p {
+    margin-top: 15px;
+    color: #d9e1db;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #10291e;
+    color: #d4ddd6;
+    padding-top: 70px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    color: white;
+}
+
+.footer-brand > p {
+    max-width: 330px;
+    color: #aebbb2;
+    margin-top: 18px;
+    font-size: 0.9rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #aebbb2;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #e3a77f;
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 22px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #87978c;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.78rem;
+    }
+
+    .intro-grid,
+    .culture-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .intro-image img {
+        height: 450px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nature-card.large {
+        grid-column: span 2;
+    }
+
+    .lifestyle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .responsible-points {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-box {
+        padding: 50px;
+        grid-template-columns: 1fr;
+    }
+
+    .contact-decoration {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    /* Mobile Navigation */
+
+    .navbar {
+        height: 68px;
+    }
+
+    .menu-btn {
+        display: block;
+        color: var(--forest);
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 15px 6%;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 0.95rem;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: 760px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.3rem);
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+
+    /* Intro */
+
+    .intro-grid {
+        gap: 40px;
+    }
+
+    .intro-image img {
+        height: 380px;
+    }
+
+    .image-badge {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .stats {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Explore */
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 240px;
+    }
+
+    /* Nature */
+
+    .nature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nature-card,
+    .nature-card.large {
+        grid-column: span 1;
+        height: 350px;
+    }
+
+    /* Culture */
+
+    .culture-layout {
+        gap: 35px;
+    }
+
+    .culture-item {
+        grid-template-columns: 35px 1fr;
+        padding: 22px;
+    }
+
+    /* Lifestyle */
+
+    .lifestyle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsible */
+
+    .responsible {
+        min-height: 700px;
+    }
+
+    .responsible-points {
+        grid-template-columns: 1fr;
+    }
+
+    /* Gallery */
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+
+    .gallery-large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .gallery-tall {
+        grid-row: span 1;
+    }
+
+    /* Contact */
+
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .contact-box {
+        padding: 35px 25px;
+    }
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-large {
+        grid-column: span 1;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+}
